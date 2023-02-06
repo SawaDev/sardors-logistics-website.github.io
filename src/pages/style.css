@@ -1,0 +1,85 @@
+.banner {
+  background-image: url(../assets/hero-bg.png);
+  background-color: #0e1d34;
+  background-size: cover;
+  background-position: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.video {
+  background-color: rgba(14, 29, 52, 0.9);
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.youtubeVideo {
+  height: 385px;
+  width: 686px;
+}
+
+.callUs {
+  background: linear-gradient(rgba(14, 29, 52, 0.6), rgba(14, 29, 52, 0.8)), url(../assets/call-us.jpg) center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.about {
+  background: linear-gradient(rgba(14, 29, 52, 0.6), rgba(14, 29, 52, 0.8)), url(../assets/bg_about.jpg) center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: white;
+}
+
+.carriers {
+  background: linear-gradient(rgba(14, 29, 52, 0.8), rgba(14, 29, 52, 0.9)), url(../assets/carriers.jpg) center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+
+.contact {
+  background: linear-gradient(rgba(14, 29, 52, 0.8), rgba(14, 29, 52, 0.9)), url(../assets/contact_banner_2.jpg) center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+
+.imgBack {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.img1{
+  background: linear-gradient(rgba(14, 29, 52, 0.4), rgba(14, 29, 52, 0.4)), url(../assets/carriers_3.jpeg) center center;
+}
+
+.img2 {
+  background: linear-gradient(rgba(14, 29, 52, 0.4), rgba(14, 29, 52, 0.4)), url(../assets/carriers_2.jpg) center center;
+}
+
+.img3 {
+  background: linear-gradient(rgba(14, 29, 52, 0.3), rgba(14, 29, 52, 0.3)), url(../assets/shippers_4.jpg) center center;
+}
+
+.img4 {
+  background: linear-gradient(rgba(14, 29, 52, 0.3), rgba(14, 29, 52, 0.3)), url(../assets/shippers_3.jpg) center center;
+}
+
+.map {
+  width: 100%;
+  height: 340px;
+}
+
+.footer {
+  background: rgba(14, 29, 52)
+}
