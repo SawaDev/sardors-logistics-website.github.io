@@ -4,6 +4,7 @@ import "swiper/css";
 import { MdFormatQuote } from "react-icons/md"
 import { testimonial1, testimonial2, testimonial3, testimonial4 } from "../assets/index"
 import "./style.css";
+import { motion } from "framer-motion"
 
 const MySwiper = () => {
   useEffect(() => {
@@ -36,7 +37,10 @@ const MySwiper = () => {
   }, []);
 
   return (
-    <div className="swiper-container max-w-7xl mx-auto px-6 xl:px-0 mb-12 overflow-hidden">
+    <motion.div
+      whileInView={{ y: [80, 0], opacity: [0, 1] }}
+      transition={{ duration: 0.5 }}
+      className="swiper-container max-w-7xl mx-auto px-6 xl:px-0 mb-12 overflow-hidden">
       <div className="swiper-wrapper">
         <div className="swiper-slide">
           <div className='relative rounded-sm bg-gray-100 p-6'>
@@ -46,7 +50,7 @@ const MySwiper = () => {
                 <img className='rounded-full' src={testimonial1} />
               </div>
               <div className='ml-3 flex flex-col items-start'>
-                <h6 className='font-semibold text-blue-600'>Alexander Rodriguez</h6>
+                <h6 className='font-semibold text-blue-600'>Alexander Kim</h6>
                 <small className='text-gray-400 capitalize'>Supply chain manager</small>
               </div>
             </div>
@@ -76,7 +80,7 @@ const MySwiper = () => {
                 <img className='rounded-full' src={testimonial3} />
               </div>
               <div className='ml-3 flex flex-col items-start'>
-                <h6 className='font-semibold text-blue-600'>Christopher Wilson</h6>
+                <h6 className='font-semibold text-blue-600'>Adam Wilson</h6>
                 <small className='text-gray-400 capitalize'>Transportation manager</small>
               </div>
             </div>
@@ -99,7 +103,7 @@ const MySwiper = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -8,12 +8,12 @@ import { service1, service4, service5, heroImg } from '../assets/index'
 import MySwiper from "../components/Testimonials";
 import Footer from "../components/Footer";
 import SupportStat from "../components/SupportStat";
+import { motion } from "framer-motion"
 
 const Home = () => {
   const [active, setActive] = useState(false);
 
   const handleChildData = data => {
-    console.log("Data received from child:", data);
     setActive(data);
   };
 
@@ -22,7 +22,7 @@ const Home = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="overflow-hidden">
       {active && (
         <div className="fixed top-0 left-0 right-0 z-40">
           <div className='video'>
@@ -38,23 +38,30 @@ const Home = () => {
       )}
       <div className="banner w-full">
         <div className='flex flex-col-reverse gap-20 max-w-7xl mx-auto pt-[120px] pb-[60px] px-[20px] lg:flex-row sm:px-20'>
-          <div className='flex-1 flex flex-col'>
+          <motion.div
+            whileInView={{ x: [-100, 0] }}
+            transition={{ duration: 0.5 }}
+            className='flex-1 flex flex-col'
+          >
             <span className='text-5xl font-bold mb-5'>
               Your Lightning Fast Delivery Partner
             </span>
             <span className='mb-10 text-[15px]'>
               Facere distinctio molestiae nisi fugit tenetur repellat non praesentium nesciunt optio quis sit odio nemo quisquam. eius quos reiciendis eum vel eum voluptatem eum maiores eaque id optio ullam occaecati odio est possimus vel reprehenderit
             </span>
-            <div className='flex gap-5'>
+            <div className='flex gap-3 sm:gap-5'>
               <SupportStat text="Clients" end={989} />
               <SupportStat text="Projects" end={156} />
               <SupportStat text="Support" end={353} />
               <SupportStat text="Workers" end={524} />
             </div>
-          </div>
-          <div className='flex-1'>
+          </motion.div>
+          <motion.div
+            whileInView={{ x: [100, 0] }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className='flex-1'>
             <img src={heroImg} />
-          </div>
+          </motion.div>
         </div>
       </div>
       <AboutCom onSendData={handleChildData} active={active} />
@@ -67,11 +74,14 @@ const Home = () => {
       <Header text="testimonials" />
       <MySwiper />
       <div className="callUs">
-        <div className="max-w-7xl mx-auto text-white px-10 sm:px-0 flex justify-center flex-col items-center">
+        <motion.div
+          whileInView={{ scale: [0, 1] }}
+          transition={{ duration: 0.4 }}
+          className="max-w-7xl mx-auto text-white px-10 sm:px-0 flex justify-center flex-col items-center">
           <h2 className="text-3xl font-semibold">Call Us</h2>
           <p className="py-8 text-center">Don't hesitate to reach out to us with any questions or concerns. Our dedicated customer service team is available<br /> to assist you 24/7, and we will always be happy to provide you with the help you need</p>
           <a className="text-lg px-5 py-3 cursor-pointer border-2 rounded ease-in-out duration-200 hover:border-blue-600 hover:bg-blue-600">Call Now <MdCall className="inline-block ml-2" /> </a>
-        </div>
+        </motion.div>
       </div>
       <Footer />
     </div>

@@ -5,10 +5,10 @@ const Footer = () => {
 
   return (
     <div className='footer text-white px-6 sm:px-0 w-full'>
-      <div className='max-w-7xl mx-auto flex justify-center w-fit gap-16' >
-        <div className='flex flex-col gap-2 py-6 flex-1'>
+      <div className='footerContainer max-w-7xl mx-4 sm:mx-8 xl:mx-auto lg:gap-16' >
+        <div className='flex flex-col justify-around gap-2 py-6'>
           <h1 className='text-xl font-extrabold'>Brand</h1>
-          <p className='text-gray-300 mb-3'>Efficient Freight Solutions for Your Business - Trust Our Expertise in  Brokerage and Logistics</p>
+          <p className='text-gray-300 mb-3'>Efficient Freight Solutions for <br />Your Business - Trust Our<br /> Expertise in  Brokerage and Logistics</p>
           <div className='icons flex gap-2'>
             <div className='p-2 text-lg border-2 rounded-full opacity-70 hover:opacity-100 shadow-sm hover:shadow-white '>
               <FaFacebookF />
