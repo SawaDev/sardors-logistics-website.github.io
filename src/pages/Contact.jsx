@@ -3,10 +3,22 @@ import { SlLocationPin } from "react-icons/sl"
 import { TfiEmail } from "react-icons/tfi"
 import { BsPhone } from "react-icons/bs"
 import Footer from '../components/Footer'
-import Button from '../components/Button'
 import { motion } from "framer-motion"
+import emailjs from "@emailjs/browser"
 
 const Contact = () => {
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_v0ljzca', 'template_hd7lh6u', e.target, 'VWuLU3mf46Ek5FS8L')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    e.target.reset();
+  }
+
   return (
     <div>
       <div className='contact pt-28 pb-16 grid place-items-center '>
@@ -38,36 +50,36 @@ const Contact = () => {
             <div className='bg-blue-600 p-3 text-lg text-white rounded-md'>
               <TfiEmail />
             </div>
-            <div>
+            <div className='flex flex-col'>
               <span className='text-xl font-semibold'>Email: </span>
-              <p>mail@gmail.com</p>
+              <a href='mailto:sardormahmudov16@gmail.com'>sardormahmudov16@gmail.com</a>
             </div>
           </div>
           <div className='flex gap-3 items-center justify-start'>
             <div className='bg-blue-600 p-3 text-lg text-white rounded-md'>
               <BsPhone />
             </div>
-            <div>
+            <div className='flex flex-col'>
               <span className='text-xl font-semibold'>Phone: </span>
-              <p>+998123456789</p>
+              <a href="tel:+998957902108">+998123456789</a>
             </div>
           </div>
         </div>
-        <div className='lg:w-2/3 flex flex-col gap-4 '>
+        <form onSubmit={sendEmail} className='lg:w-2/3 flex flex-col gap-4 '>
           <div className='flex flex-col sm:flex-row gap-4 w-full'>
-            <input className='border-2 w-full rounded-md outline-none focus:border-2 px-4 py-3' placeholder='Your Name' type="text" />
-            <input className='border-2 w-full rounded-md outline-none focus:border-2 px-4 py-3' placeholder='Your Email' type="email" />
+            <input className='border-2 w-full rounded-md outline-none focus:border-2 px-4 py-3' placeholder='Your Name' type="text" name="name" required />
+            <input className='border-2 w-full rounded-md outline-none focus:border-2 px-4 py-3' placeholder='Your Email' type="email" name='email' required />
           </div>
           <div>
-            <input className='border-2 w-full rounded-md outline-none focus:border-2 px-4 py-3' placeholder='Subject' type="text" />
+            <input className='border-2 w-full rounded-md outline-none focus:border-2 px-4 py-3' placeholder='Subject' type="text" name='subject' required />
           </div>
           <div>
-            <textarea className='border-2 w-full rounded-md h-28 resize-none outline-none focus:border-2 px-4 py-3' placeholder='Message' type="text" />
+            <textarea className='border-2 w-full rounded-md h-28 resize-none outline-none focus:border-2 px-4 py-3' placeholder='Message' type="text" name='message' required />
           </div>
           <div className='flex justify-center'>
-            <Button text="Send Message" />
+            <input type="submit" value="Send Message" className='bg-blue-500 shadow-lg shadow-blue-300 px-4 py-2 text-white text-lg rounded-lg transform ease-in-out duration-200 hover:scale-x-110' />
           </div>
-        </div>
+        </form>
       </div>
       <div className='flex items-center w-full py-20 px-3 sm:px-10 xl:px-0 max-w-7xl mx-auto overflow-hidden'>
         <div className='w-full'>

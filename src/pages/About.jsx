@@ -23,11 +23,11 @@ const Accordion = (props) => {
       {props.items.map((item, index) => (
         <div key={index} onClick={() => handleClick(index)} className="w-full bg-slate-100 flex flex-col gap-2 rounded-lg py-5 px-10 cursor-pointer">
           <div className="w-full flex items-center justify-between">
-            <div className='flex gap-3 items-center font-bold text-lg'>
+            <div className='flex gap-3 items-center font-semibold text-lg'>
               <div className='text-blue-700 text-lg'>
                 <BsQuestionCircle />
               </div>
-              <div className={`${index === expanded ? "text-blue-700" : ""}`}>
+              <div className={`${index === expanded && "text-blue-700"}`}>
                 {item.title}
               </div>
             </div>
@@ -45,9 +45,9 @@ const Accordion = (props) => {
 }
 
 const items = [
-  { title: 'Title 1', content: 'Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.' },
-  { title: 'Title 2', content: 'Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.' },
-  { title: 'Title 3', content: 'Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.' },
+  { title: 'What is the main role of a freight brokerage company?', content: 'A freight brokerage company acts as a liaison between shipping companies and shippers to coordinate the transportation of goods. They help match carriers with available loads and negotiate rates on behalf of their clients.' },
+  { title: 'How does a freight brokerage company make money?', content: 'Freight brokerage companies earn a commission on the difference between the rates they negotiate for their clients and the rates they contract with carriers. They typically take a percentage of the total shipment cost as their fee.' },
+  { title: 'How does a freight brokerage company ensure the safety and security of shipments?', content: 'Freight brokerage companies work with trusted carriers and have strict standards for the transportation of goods. They also monitor shipments and provide tracking information to clients to ensure the safe and secure delivery of goods. In addition, many companies have insurance options available to protect clients against any losses or damages during transportation.' },
 ];
 
 const About = () => {

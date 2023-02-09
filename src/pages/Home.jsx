@@ -80,7 +80,7 @@ const Home = () => {
           className="max-w-7xl mx-auto text-white px-10 sm:px-0 flex justify-center flex-col items-center">
           <h2 className="text-3xl font-semibold">Call Us</h2>
           <p className="py-8 text-center">Don't hesitate to reach out to us with any questions or concerns. Our dedicated customer service team is available<br /> to assist you 24/7, and we will always be happy to provide you with the help you need</p>
-          <a className="text-lg px-5 py-3 cursor-pointer border-2 rounded ease-in-out duration-200 hover:border-blue-600 hover:bg-blue-600">Call Now <MdCall className="inline-block ml-2" /> </a>
+          <a href="tel:+998957902108" className="text-lg px-5 py-3 cursor-pointer border-2 rounded ease-in-out duration-200 hover:border-blue-600 hover:bg-blue-600">Call Now <MdCall className="inline-block ml-2" /> </a>
         </motion.div>
       </div>
       <Footer />
