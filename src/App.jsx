@@ -7,7 +7,6 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 import { BiMessage } from "react-icons/bi"
 import { AiOutlineClose } from "react-icons/ai"
-import Button from './components/Button'
 import Shippers from './pages/Shippers'
 import emailjs from "@emailjs/browser"
 
@@ -51,7 +50,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <main className='relative'>
+      {/* <main className='relative'>
         <div className='fixed top-0 left-0 right-0 z-50'>
           <Navbar isScrolling={isScrolling} onSendData={handleChildData} menuParent={menuParent} />
         </div>
@@ -79,7 +78,8 @@ const App = () => {
           <Route path="/carriers" element={<Carriers />} />
           <Route path="/shippers" element={<Shippers />} />
         </Routes>
-      </main>
+      </main> */}
+      
     </BrowserRouter>
   )
 }
